@@ -20,8 +20,8 @@ app.use((req, res, next) => {
     next();
   });
 
-  app.use('/static', express.static(path.join(__dirname, 'client/build')));
-// app.use(express.static("client/build"));
+//   app.use('/static', express.static(path.join(__dirname, 'client/build')));
+app.use(express.static("client/build"));
 
 // app.use('/static', express.static(path.join(__dirname, 'client/build')));
 
