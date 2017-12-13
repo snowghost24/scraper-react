@@ -46,7 +46,7 @@ app.get("/scraper", function (req, res) {
 
        
 
-        $(".entry-title").each(function (i, element) {
+        $(".hentry").each(function (i, element) {
 
             numSet++;
             results.title = $(this).children("a").attr("title")

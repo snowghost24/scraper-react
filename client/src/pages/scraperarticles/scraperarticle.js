@@ -18,9 +18,9 @@ class ScrapedA extends Component {
      synopsis: ""
    };
    // waits untill components mount to load books
-  //  componentDidMount() {
-  //    this.loadArticles();
-  //  }
+   componentDidMount() {
+     this.loadArticles();
+   }
  // calls the scrapper and returns books
    loadArticles = () => {
      API.getArticles()
@@ -66,7 +66,7 @@ class ScrapedA extends Component {
      return (
      
        <Container fluid>
-         {/* <Nav /> */}
+         <Nav />
          <Row>
            <Col size="md-9">
              <Jumbotron>
