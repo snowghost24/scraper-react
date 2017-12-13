@@ -31,46 +31,46 @@ if (process.env.MONGODB_URI){
 
 
 
-// ________________________MY SCRAP REQUEST____________________________________________
+//________________________MY SCRAP REQUEST____________________________________________
 
-// app.get("/scraper", function (req, res) {
+app.get("/scraper", function (req, res) {
 
 
-//     var numSet = 0;
+    var numSet = 0;
     
-//     request("http://snowboarding.transworld.net/videos/#hjiHOhvH2fvmmWup.97", function (error, response, html) {
+    request("http://snowboarding.transworld.net/videos/#hjiHOhvH2fvmmWup.97", function (error, response, html) {
 
-//         var $ = cheerio.load(html);
+        var $ = cheerio.load(html);
 
-//         var results = {};
+        var results = {};
 
        
 
-//         $(".entry-title").each(function (i, element) {
+        $(".entry-title").each(function (i, element) {
 
-//             numSet++;
-//             results.title = $(this).children("a").attr("title")
+            numSet++;
+            results.title = $(this).children("a").attr("title")
             
-//                         results.link = $(this).children("a").attr("href")
+                        results.link = $(this).children("a").attr("href")
 
 
-//             if (results.title && results.link ) {
+            if (results.title && results.link ) {
 
-//                 db.Article.create(results)
+                db.Article.create(results)
                 
                 
 
-//             }
+            }
 
             
             
-//         })
+        })
 
-//        res.send("Newly scrapped articles!")
+       res.send("Newly scrapped articles!")
 
-//     })
+    })
     
-// })
+})
 
 // ___________________________________END MY SCRAPE _____________
 
