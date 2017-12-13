@@ -11,8 +11,8 @@ const App = () =>
     <div>
       <Switch>
         <Route exact path="/" component={ScrapedA} />
-        <Route exact path="/scraper" component={ScrapedA}  />
-        <Route exact path="/saver" component={SavedA} />
+        <Route exact path={`${process.env.PUBLIC_URL}/scraper`}  component={ScrapedA}  />
+        <Route exact path={`${process.env.PUBLIC_URL}/saver`} component={SavedA} />
         <Route component={NoMatch} />
       </Switch>
     </div>
