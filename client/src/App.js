@@ -9,7 +9,6 @@ import Nav from "./components/Nav";
 const App = () =>
   <Router>
     <div>
-      {/* <Nav /> */}
       <Switch>
         <Route exact path="/" component={ScrapedA} />
         <Route exact path="/scraper" component={ScrapedA}  />

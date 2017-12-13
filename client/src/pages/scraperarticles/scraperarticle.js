@@ -66,7 +66,7 @@ class ScrapedA extends Component {
      return (
      
        <Container fluid>
-         <Nav />
+         {/* <Nav /> */}
          <Row>
            <Col size="md-9">
              <Jumbotron>
