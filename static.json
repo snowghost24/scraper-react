@@ -1,0 +1,5 @@
+{"root":"client/build/",
+   "clear_urls":false,
+   "routes":{
+   "/":"index.html"
+}}

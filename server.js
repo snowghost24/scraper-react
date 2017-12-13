@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-var request = require('request');
+const path = require("path");
+// var request = require('request');
 var cheerio = require('cheerio');
 const PORT = process.env.PORT || 3001;
 
@@ -11,9 +12,18 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
-app.use(express.static("client/build"));
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+  });
 
+  app.use('/static', express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static("client/build"));
+
+// app.use('/static', express.static(path.join(__dirname, 'client/build')));
 
 var db = require("./models")
 
@@ -23,7 +33,7 @@ mongoose.Promise = global.Promise;
 if (process.env.MONGODB_URI){
     mongoose.connect(process.env.MONGODB_URI)
 }else{
-    mongoose.connect("mongodb://localhost/scraperdb", {
+    mongoose.connect("mongodb://localhost/scraperdbt", {
         useMongoClient: true
     })
 }
@@ -34,10 +44,7 @@ if (process.env.MONGODB_URI){
 //________________________MY SCRAP REQUEST____________________________________________
 
 app.get("/scraper", function (req, res) {
-
-
     var numSet = 0;
-    
     request("http://snowboarding.transworld.net/videos/#hjiHOhvH2fvmmWup.97", function (error, response, html) {
 
         var $ = cheerio.load(html);
