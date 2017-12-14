@@ -8,6 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Nav2 from "../../components/Nav2";
 import Modal from 'react-modal';
+//testign
 
 class SavedA extends Component {
 
@@ -108,7 +109,6 @@ class SavedA extends Component {
       <Jumbotron>
        <h1>Transword Saved Articles</h1>
       </Jumbotron>
-
       {this.state.books.length ? (
        <List>
         {this.state.books.map(book => (
