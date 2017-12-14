@@ -18,9 +18,9 @@ class ScrapedA extends Component {
      synopsis: ""
    };
    // waits untill components mount to load books
-   componentDidMount() {
-     this.loadArticles();
-   }
+  //  componentDidMount() {
+  //    this.loadArticles();
+  //  }
  // calls the scrapper and returns books
    loadArticles = () => {
      API.getArticles()
@@ -83,7 +83,7 @@ class ScrapedA extends Component {
                          {book.link}
                        </strong> 
                      </Link>
-                     <button className="btn btn-primary" onClick={() => this.saveBook(book._id)}>Saved</button>
+                     <button className="btn btn-primary" onClick={() => this.saveBook(book._id)}>Save</button>
                    </ListItem>
                  ))}
                </List>
