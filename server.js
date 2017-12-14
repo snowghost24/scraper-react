@@ -25,13 +25,13 @@ app.use(express.static("client/build"));
 
 
 //Any non API GET routes will be directed to our React App and handled by React Router
-app.get("*", function(req, res) {
-  if ( process.env.NODE_ENV === 'production' ) {
-    res.sendFile(__dirname + "/client/build/index.html");
-  } else {
-    res.sendFile(__dirname + "/client/public/index.html");
-  }
-});
+// app.get("*", function(req, res) {
+//   if ( process.env.NODE_ENV === 'production' ) {
+//     res.sendFile(__dirname + "/client/build/index.html");
+//   } else {
+//     res.sendFile(__dirname + "/client/public/index.html");
+//   }
+// });
 
 // app.use('/static', express.static(path.join(__dirname, 'client/build')));
 
