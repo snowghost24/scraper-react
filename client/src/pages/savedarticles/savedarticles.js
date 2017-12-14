@@ -122,7 +122,7 @@ class SavedA extends Component {
           {/* deletes articles */}
           <DeleteBtn onClick={() => this.deleteBook(book._id)} />
           {/* deletes Notes */}
-          <button className="btn btn-primary" onClick={() => this.noteBook(book._id)}>Delete Note</button>
+          {/* <button className="btn btn-primary" onClick={() => this.noteBook(book._id)}>Delete Note</button> */}
           {/* add notes */}
           <button className="btn btn-info" onClick={() => this.toggleModal()}>Add Note</button>
 
